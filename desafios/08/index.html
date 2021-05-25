@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, rgb(38, 38, 117),blue);
+        }
+        button{
+            background: rgba(82, 15, 82, 0.705);
+            font-size: 12pt; padding: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular desconto</h1>
+    <hr>
+    <button onclick="calcu()">Desconto de 10%</button>
+    <section id="iniciar">
+        <p>Clique no botão acima para iniciar</p>
+    </section>
+
+    <script>
+        function calcu(){
+            let ini = document.getElementById('iniciar')
+            let prod = prompt('Qual é  produto que voê está comprando?')
+            let pre = Number(prompt(`Qual é o preço de ${prod} `))
+            let desconto = (pre * 10)/100
+            let fim = pre - desconto
+
+
+            ini.innerHTML = `<h2>Calculando descontos de 10% para ${prod}</h2>`
+            ini.innerHTML += `<p>O preço original era R$ ${pre.toFixed(2).replace('.',',')}.</p>`
+            ini.innerHTML += `<p>Você acaba de ganhar R$ ${desconto.toFixed(2).replace('.',',')} de desconto (-10%).`
+            ini.innerHTML += `<p>No fim, você vai pagar R$ ${fim.toFixed(2).replace('.',',')} no produto ${prod}`
+        }
+
+
+    </script>
+    
+</body>
+</html>

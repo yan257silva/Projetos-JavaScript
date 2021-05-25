@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e depois</title>
+    <style>
+        button{
+            font-size: 12pt; padding: 30px;
+            border-radius: 20px;
+        }
+        #btn1{
+            color: rgb(0, 71, 0);
+            background: rgb(120, 218, 120);
+        }
+        #btn2{
+            color: rgb(131, 2, 2);
+            background: rgb(216, 83, 83);
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+    <button onclick="antes()" class="buttom" id="btn1">Antecessor</button>
+    <button onclick="depois()" class="buttom" id="btn2">Sucessor</button>
+    
+    <script>
+        function antes(){
+            let num = Number(prompt('Digite um número inteiro qualquer:'))
+            let ant = num - 1
+            let res = alert(`O antecessor do número ${num} é ${ant}`)
+        }
+        function depois(){
+            let num = Number(prompt('Digite um número inteiro qualquer:'))
+            let dep = num + 1
+            let res = alert(`O sucessor do número ${num} é ${dep}`)
+        }
+    </script>
+    
+</body>
+</html>

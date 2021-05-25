@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <style>
+        button{
+            font-size: 12pt; padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de temperatura</h1>
+    <button onclick="converter()">Converter</button>
+    <section id="res">
+        <p>Clique no botão acima para converter...</p>
+    </section>
+    <script>
+        function converter(){
+            let res = document.getElementById('res')
+            let temp = prompt('Digite uma temperatura em °C (Celcius)')
+            let kel = temp + 273.15
+            let fahr = (temp * 9/5) + 32
+            
+
+            res.innerHTML = `<p>${kel}°K (Kelvin)`
+        }
+
+    </script>
+    
+</body>
+</html>

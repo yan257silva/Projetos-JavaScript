@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        .buttom{
+            width: 80px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o troco</h1>
+    <button onclick="cal()">Comprar produto</button>
+    <script>
+        function cal(){
+            let name = prompt ('Qual produto você está comprando?')
+            let custo = Number = prompt (`Quanto custa ${name} que você está comprando?`)
+            let valor = Number = prompt (`Qual foi o valor que você deu para pagar ${name}?`)
+            res = valor - custo
+            res.toFixed(2).replace('.',',')
+            res.toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
+            let msg = alert (`Você comprou ${name} que custou  ${custo}!. Deu ${valor} em dinheiro e vai receber ${res} de troco. Volte Sempre!`) 
+        }
+
+
+    </script>
+    
+</body>
+</html>

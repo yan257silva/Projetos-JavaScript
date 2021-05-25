@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar Preço</title>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button class="button" onclick="calcular()">
+        Verificar
+    </button>
+    <section id="res">
+        <p>Clique no botão acima para analisar a mudança de preço</p>
+    </section>
+    
+    <script>
+        function calcular(){
+            let res = document.querySelector('section#res')
+            let preçoAnt = Number(prompt('Qual era o preço anterior do produto?'))
+            let preçoAtual = Number(prompt('Qual é o preço atual do produto?'))
+            res.innerHTML = `<h2Analisando os valores informados</h2>`
+            res.innerHTML += `<p>O produto custava ${preçoAnt.toFixed(2).replace('.',',')} e agora custa ${preçoAtual.toFixed(2).replace('.',',')}.</p>`
+            
+            let situação
+            if (preçoAnt > preçoAtual){
+             'Hoje o produto está mais caro'
+             preçoAtual - preçoAnt
+             `O preço desceu ${preçoAtual - preçoAnt} em relação ao preço anterior`
+
+            }else{
+             'Hoje o produto está mais barato'
+             preçoAnt - preçoAtual
+             `O preço caiu R$ ${preçoAnt - preçoAtual} em relação ao preço anterior`
+            }
+            res.innerHTML += `<p>${situação}`
+        }
+    </script>
+</body>
+</html>

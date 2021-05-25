@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+     
+        
+        h1{
+            font-family: 'New Tegomin', serif;
+            color: black;
+            text-align: center;
+        }
+        h2{
+            color: black;
+            font-family: 'New Tegomin', serif;
+        }
+        p{
+            font-family: 'Indie Flower', cursive;
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <button onclick="inicio()">Verificar</button>
+
+    <section id="resultado">
+        <p>Informa um ano para verificar se ele é bissexto</p>
+    </section>
+    
+    
+
+    <script>
+        function inicio(){
+            let res = document.querySelector('section#resultado')
+            let ano = Number(prompt('Qual é o ano que você quer verificar?'))
+
+            
+            res.innerHTML = `<h2>Analisando o ano de ${ano}...</h2>`
+
+           
+           if(ano % 4 == 0){
+            res.innerHTML += `<p>O ano de ${ano} <mark style='background:rgb(81, 207, 81);color:green;'>É BISSEXTO</mark></p>`
+           }else if(ano % 4 != 0){
+            res.innerHTML += `<p>O ano de ${ano} <mark style='background:rgba(250, 74, 74, 0.692);color:red;'>NÃO É BISSEXTO</mark></p>`
+           }
+           
+        }
+
+
+    </script>
+    
+</body>
+</html>

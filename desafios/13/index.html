@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+        body{
+            background-image: linear-gradient(to right, black,rgb(54, 49, 49));
+        }
+        h1{
+            font-family: 'New Tegomin', serif;
+            color: antiquewhite;
+            text-align: center;
+        }
+        h2{
+            color: white;
+            font-family: 'New Tegomin', serif;
+        }
+        p{
+            font-family: 'Indie Flower', cursive;
+            color: antiquewhite;
+        }
+        .btn {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 0.6em;
+  color: white;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.btn:hover, .btn:focus {
+  color: black;
+  outline: 0;
+}
+
+.first {
+  -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+.first:hover {
+  box-shadow: 0 0 40px 40px white inset;
+}
+        
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <button onclick="clicar()" class="btn first">Entrar com as notas</button>
+    <section id="saida">
+        <p>Clique no botão a cima para informar as notas do aluno</p>
+    </section>
+
+    <script>
+        function clicar(){
+            var saida = document.querySelector('section#saida')
+            let nome = prompt('Digite o nome do aluno')
+            let n1 = Number(prompt(`Digite a primeira nota de ${nome}:`))
+            let n2 = Number(prompt(`Digite a segunda nota:`))
+            var nota = (n1+n2)/2
+                
+            let msg 
+            if(nota > 6){
+                msg = `Com a média acima de 6,0 o aluno está <mark style='background:rgb(81, 207, 81);color:green;'>APROVADO`
+            } else if (nota >= 3 && nota <= 6){
+                msg = `<p>Com a média entre 3,0 e 6,0 o aluno está em <mark style='background:rgb(255, 255, 111);color:rgb(255, 174, 0)'>RECUPERAÇÃO</mark>.</p>`
+            }else {
+                msg = ` <p>Com a média abaixo de 3,0 o aluno está <strong><mark style='background:rgba(250, 74, 74, 0.692);color:red;'>REPROVADO</mark></strong>.</p>`
+            }
+
+            saida.innerHTML = `<h2>Analisando a situação de ${nome}</h2>`
+            saida.innerHTML += `<p>Com as notas ${n1.toFixed(1).replace('.',',')} e ${n2.toFixed(1).replace('.',',')} a <strong>média é ${nota.toFixed(1).replace('.',',')} </strong>.</p>`
+            saida.innerHTML += `${msg}`
+            }
+    </script>
+    
+</body>
+</html>
